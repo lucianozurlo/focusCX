@@ -8,75 +8,75 @@
 =============== */
 :root {
   /* Used as body background and overlays */
-  --bringer-s-body-bg: #f5f7fa;
+  --fcx-s-body-bg: #f5f7fa;
 
   /* Used as a background color for header, footer, and mobile navigation */
-  --bringer-s-nav: #ffffffcc;
+  --fcx-s-nav: #ffffffcc;
 
   /* Used as a background color for block containers, sub-menus, and form inputs */
-  --bringer-s-container-bg: #ffffff;
+  --fcx-s-container-bg: #ffffff;
 
   /* The same as the previous one but with transparency for frosted glass blocks */
-  --bringer-s-container-frosted: #ffffffee;
+  --fcx-s-container-frosted: #ffffffee;
 
   /* Used as a color for headings, page titles, button labels, and other bright text accents */
-  --bringer-s-heading: #1a1d24;
+  --fcx-s-heading: #1a1d24;
 
   /* It is the same as the previous one but with transparency. Used for labels, meta, and some hover effects */
-  --bringer-s-heading-fade: #1a1d24c0;
+  --fcx-s-heading-fade: #1a1d24c0;
 
   /* Used as a color for general content */
-  --bringer-s-text: #2e323b;
+  --fcx-s-text: #54585c;
 
   /* A background color for accents, like buttons, highlighted blocks, etc. */
-  --bringer-s-accent: #f93d44;
+  --fcx-s-accent: #f93d44;
 
   /* A hovered button background color */
-  --bringer-button-hover-bg: #f93d44d0;
+  --fcx-button-hover-bg: #f93d44d0;
 
   /* Used as a color for text accents */
-  --bringer-s-text-accent: #d11e24;
+  --fcx-s-text-accent: #d11e24;
 
   /* Used as a text color for accented blocks */
-  --bringer-s-accented-text: var(--bringer-s-heading);
+  --fcx-s-accented-text: var(--fcx-s-heading);
 
   /* Used as a primary border-color */
-  --bringer-s-border: #1a1d2427;
+  --fcx-s-border: #1a1d2427;
 
   /* Used as a border color for accented blocks */
-  --bringer-s-border-accent: #d11e2480;
+  --fcx-s-border-accent: #d11e2480;
 
   /* A default semi-transparent border color for blocks with a shining effect */
-  --bringer-s-border-mute: #1a1d240d;
+  --fcx-s-border-mute: #1a1d240d;
 
   /* A semi-transparent border shining effect color */
-  --bringer-s-border-highlight: #1a1d2440;
+  --fcx-s-border-highlight: #1a1d2440;
 
   /* Used as a color for a backlight effect */
-  --bringer-s-backlight: #1a1d2412;
+  --fcx-s-backlight: #1a1d2412;
 
   /* Used as a color for block shadow */
-  --bringer-s-box-shadow: #07090d10;
+  --fcx-s-box-shadow: #07090d10;
 
   /* The cursor-followed backlight color. It uses the primary backlight color */
-  --bringer-s-cursor-light: var(--bringer-s-backlight);
+  --fcx-s-cursor-light: var(--fcx-s-backlight);
 
   /* A horizontal side-fade gradient border color */
-  --bringer-c-border-gradient: linear-gradient(
+  --fcx-c-border-gradient: linear-gradient(
     to left,
     transparent,
-    var(--bringer-s-border),
+    var(--fcx-s-border),
     transparent
   );
 
   /* Main menu text color */
-  --bringer-c-menu: var(--bringer-s-text);
+  --fcx-c-menu: var(--fcx-s-text);
 
   /* Main menu hovered item text color */
-  --bringer-c-menu-hover: var(--bringer-s-heading);
+  --fcx-c-menu-hover: var(--fcx-s-heading);
 
   /* Main menu current item text color */
-  --bringer-c-menu-active: var(--bringer-s-heading);
+  --fcx-c-menu-active: var(--fcx-s-heading);
 }
 
 /* ==========
@@ -85,156 +85,156 @@
 :root {
   /* === FONT GROUPS === */
   /* Headings Font Family */
-  --bringer-t-heading-ff: "Rubik", sans-serif;
+  --fcx-t-heading-ff: "Rubik", sans-serif;
 
   /* Headings Font Weight */
-  --bringer-t-heading-fw: 600;
+  --fcx-t-heading-fw: 600;
 
   /* Content Font Family */
-  --bringer-t-content-ff: "Rubik", sans-serif;
+  --fcx-t-content-ff: "Rubik", sans-serif;
 
   /* Content Font Weight */
-  --bringer-t-content-fw: 400;
+  --fcx-t-content-fw: 400;
 
   /* Content Font Letter Spacing */
-  --bringer-t-content-ls: -0.01em;
+  --fcx-t-content-ls: -0.01em;
 
   /* === MAIN MENU === */
   /* Main Menu Font Family */
-  --bringer-t-menu-ff: var(--bringer-t-content-ff);
+  --fcx-t-menu-ff: var(--fcx-t-content-ff);
 
   /* Main Menu Font Weight */
-  --bringer-t-menu-fw: var(--bringer-t-content-fw);
+  --fcx-t-menu-fw: var(--fcx-t-content-fw);
 
   /* Main Menu Font Size */
-  --bringer-t-menu-fs: 14px;
+  --fcx-t-menu-fs: 14px;
 
   /* Main Menu Line Height */
-  --bringer-t-menu-lh: 1.4em;
+  --fcx-t-menu-lh: 1.4em;
 
   /* Sub-Menu Font Family */
-  --bringer-t-submenu-ff: var(--bringer-t-menu-ff);
+  --fcx-t-submenu-ff: var(--fcx-t-menu-ff);
 
   /* Main Menu Font Weight */
-  --bringer-t-submenu-fw: var(--bringer-t-menu-fw);
+  --fcx-t-submenu-fw: var(--fcx-t-menu-fw);
 
   /* Main Menu Font Size */
-  --bringer-t-submenu-fs: var(--bringer-t-menu-fs);
+  --fcx-t-submenu-fs: var(--fcx-t-menu-fs);
 
   /* Main Menu Line Heiight */
-  --bringer-t-submenu-lh: var(--bringer-t-menu-lh);
+  --fcx-t-submenu-lh: var(--fcx-t-menu-lh);
 
   /* === FOOTER === */
   /* Footer Font Size */
-  --bringer-t-footer-fs: 14px;
+  --fcx-t-footer-fs: 14px;
 
   /* Footer Text Line Height */
-  --bringer-t-footer-lh: 1.4em;
+  --fcx-t-footer-lh: 1.4em;
 
   /* Social Icons Size */
-  --bringer-socials-size: 24px;
+  --fcx-socials-size: 24px;
 
   /* === HEADINGS === */
   /* H1 Heading font size */
-  --bringer-t-h1-fs: 80px;
+  --fcx-t-h1-fs: 80px;
 
   /* H1 Heading letter spacing */
-  --bringer-t-h1-ls: -0.05em;
+  --fcx-t-h1-ls: -0.05em;
 
   /* H1 Line Height */
-  --bringer-t-h1-lh: 1.1em;
+  --fcx-t-h1-lh: 1.1em;
 
   /* H1 Margin */
-  --bringer-t-h1-margin: -0.175em 0 0.338em -0.063em;
+  --fcx-t-h1-margin: -0.175em 0 0.338em -0.063em;
 
   /* H2 Heading font size */
-  --bringer-t-h2-fs: 56px;
+  --fcx-t-h2-fs: 56px;
 
   /* H2 Heading letter spacing */
-  --bringer-t-h2-ls: -0.05em;
+  --fcx-t-h2-ls: -0.05em;
 
   /* H2 Line Height */
-  --bringer-t-h2-lh: 1.2em;
+  --fcx-t-h2-lh: 1.2em;
 
   /* H2 Margin */
-  --bringer-t-h2-margin: -0.232em 0 0.482em -0.06em;
+  --fcx-t-h2-margin: -0.232em 0 0.482em -0.06em;
 
   /* H3 Heading font size */
-  --bringer-t-h3-fs: 40px;
+  --fcx-t-h3-fs: 40px;
 
   /* H3 Heading letter spacing */
-  --bringer-t-h3-ls: -0.05em;
+  --fcx-t-h3-ls: -0.05em;
 
   /* H3 Line Height */
-  --bringer-t-h3-lh: 1.2em;
+  --fcx-t-h3-lh: 1.2em;
 
   /* H3 Margin */
-  --bringer-t-h3-margin: -0.215em 0 0.65em -0.05em;
+  --fcx-t-h3-margin: -0.215em 0 0.65em -0.05em;
 
   /* H4 Heading font size */
-  --bringer-t-h4-fs: 32px;
+  --fcx-t-h4-fs: 32px;
 
   /* H4 Heading letter spacing */
-  --bringer-t-h4-ls: -0.05em;
+  --fcx-t-h4-ls: -0.05em;
 
   /* H4 Line Height */
-  --bringer-t-h4-lh: 1.2em;
+  --fcx-t-h4-lh: 1.2em;
 
   /* H4 Margin */
-  --bringer-t-h4-margin: -0.22em 0 0.813em -0.05em;
+  --fcx-t-h4-margin: -0.22em 0 0.813em -0.05em;
 
   /* H5 Heading font size */
-  --bringer-t-h5-fs: 26px;
+  --fcx-t-h5-fs: 26px;
 
   /* H5 Heading letter spacing */
-  --bringer-t-h5-ls: -0.02em;
+  --fcx-t-h5-ls: -0.02em;
 
   /* H5 Line Height */
-  --bringer-t-h5-lh: 1.2em;
+  --fcx-t-h5-lh: 1.2em;
 
   /* H5 Margin */
-  --bringer-t-h5-margin: -0.19em 0 1em -0.06em;
+  --fcx-t-h5-margin: -0.19em 0 1em -0.06em;
 
   /* H6 Heading font size */
-  --bringer-t-h6-fs: 20px;
+  --fcx-t-h6-fs: 20px;
 
   /* H6 Heading letter spacing */
-  --bringer-t-h6-ls: -0.02em;
+  --fcx-t-h6-ls: -0.02em;
 
   /* H6 Line Height */
-  --bringer-t-h6-lh: 1.2em;
+  --fcx-t-h6-lh: 1.2em;
 
   /* H6 Margin */
-  --bringer-t-h6-margin: -0.2em 0 1.2em -0.038em;
+  --fcx-t-h6-margin: -0.2em 0 1.2em -0.038em;
 
   /* === CONTENT === */
   /* Content Large text Font Size */
-  --bringer-t-large-fs: 22px;
+  --fcx-t-large-fs: 20px;
 
   /* Content text Font Size */
-  --bringer-t-content-fs: 16px;
+  --fcx-t-content-fs: 16px;
 
   /* Content text Line Height */
-  --bringer-t-content-lh: 1.4em;
+  --fcx-t-content-lh: 1.4em;
 
   /* Meta Font Size */
-  --bringer-t-meta-fs: 12px;
+  --fcx-t-meta-fs: 12px;
 
   /* Meta Letter Spacing */
-  --bringer-t-meta-ls: 0.12em;
+  --fcx-t-meta-ls: 0.12em;
 
   /* Meta Font Weight */
-  --bringer-t-meta-fw: 600;
+  --fcx-t-meta-fw: 600;
 
   /* === FORMS AND FIELDS === */
   /* Button Font Size */
-  --bringer-t-button-fs: 15px;
+  --fcx-t-button-fs: 15px;
 
   /* Input Font Size */
-  --bringer-t-input-fs: 14px;
+  --fcx-t-input-fs: 14px;
 
   /* Input Line Height */
-  --bringer-t-input-lh: 1.4em;
+  --fcx-t-input-lh: 1.4em;
 }
 
 /* =======================
@@ -242,49 +242,49 @@
 ========================== */
 :root {
   /* Header vertical spacing */
-  --bringer-header-spacing: 16px;
+  --fcx-header-spacing: 16px;
 
   /* Main Menu items spacing */
-  --bringer-menu-gap: 32px;
+  --fcx-menu-gap: 32px;
 
   /* Sub-menu container width */
-  --bringer-sub-menu-width: 200px;
+  --fcx-sub-menu-width: 200px;
 
   /* Social Items list items spacing */
-  --bringer-socials-gap: 32px;
+  --fcx-socials-gap: 32px;
 
   /* Section Spacing (Applies at the top and the bottom of each section) */
-  --bringer-section-gap: 128px;
+  --fcx-section-gap: 128px;
 
   /* Extra Large border radius */
-  --bringer-xl-br: 48px;
+  --fcx-xl-br: 48px;
 
   /* Large border radius */
-  --bringer-large-br: 32px;
+  --fcx-large-br: 32px;
 
   /* Default border radius */
-  --bringer-default-br: 24px;
+  --fcx-default-br: 24px;
 
   /* Small border radius */
-  --bringer-small-br: 16px;
+  --fcx-small-br: 16px;
 
   /* Extra small border radius */
-  --bringer-xs-br: 8px;
+  --fcx-xs-br: 8px;
 
   /* Button padding */
-  --bringer-button-spacing: 13px 24px 14px 24px;
+  --fcx-button-spacing: 13px 24px 14px 24px;
 
   /* Button border radius */
-  --bringer-button-br: var(--bringer-xs-br);
+  --fcx-button-br: var(--fcx-xs-br);
 
   /* Input field padding */
-  --bringer-input-spacing: 16px 16px 16px 16px;
+  --fcx-input-spacing: 16px 16px 16px 16px;
 
   /* Input field border radius */
-  --bringer-input-br: var(--bringer-xs-br);
+  --fcx-input-br: var(--fcx-xs-br);
 
   /* Input field bottom margin */
-  --bringer-input-gap: 24px;
+  --fcx-input-gap: 24px;
 
   /* Shadow Themes Grid: Container */
   --stg-container-width: 1200px;
@@ -315,30 +315,30 @@
   :root {
     --stg-container-width: 976px;
 
-    --bringer-t-h1-fs: 64px;
-    --bringer-t-h2-fs: 45px;
-    --bringer-t-h3-fs: 32px;
-    --bringer-t-h4-fs: 26px;
-    --bringer-t-h5-fs: 22px;
-    --bringer-t-h6-fs: 18px;
-    --bringer-t-large-fs: 18px;
-    --bringer-t-content-fs: 14px;
-    --bringer-t-footer-fs: 14px;
-    --bringer-t-meta-fs: 10px;
-    --bringer-t-button-fs: 14px;
-    --bringer-t-input-fs: 14px;
+    --fcx-t-h1-fs: 64px;
+    --fcx-t-h2-fs: 45px;
+    --fcx-t-h3-fs: 32px;
+    --fcx-t-h4-fs: 26px;
+    --fcx-t-h5-fs: 22px;
+    --fcx-t-h6-fs: 18px;
+    --fcx-t-large-fs: 18px;
+    --fcx-t-content-fs: 14px;
+    --fcx-t-footer-fs: 14px;
+    --fcx-t-meta-fs: 10px;
+    --fcx-t-button-fs: 14px;
+    --fcx-t-input-fs: 14px;
 
-    --bringer-header-spacing: 12px;
+    --fcx-header-spacing: 12px;
 
-    --bringer-menu-gap: 24px;
-    --bringer-socials-gap: 24px;
-    --bringer-section-gap: 96px;
+    --fcx-menu-gap: 24px;
+    --fcx-socials-gap: 24px;
+    --fcx-section-gap: 96px;
 
-    --bringer-xl-br: 36px;
-    --bringer-large-br: 24px;
-    --bringer-default-br: 18px;
-    --bringer-small-br: 12px;
-    --bringer-xs-br: 6px;
+    --fcx-xl-br: 36px;
+    --fcx-large-br: 24px;
+    --fcx-default-br: 18px;
+    --fcx-small-br: 12px;
+    --fcx-xs-br: 6px;
 
     --stg-gap: 24px;
     --stg-d-gap: 24px;
@@ -347,7 +347,7 @@
     --stg-small-gap: 12px;
     --stg-large-gap: 48px;
     --stg-xl-gap: 96px;
-    --bringer-section-gap: 96px;
+    --fcx-section-gap: 96px;
   }
 }
 
@@ -355,37 +355,37 @@
 @media only screen and (max-width: 960px) {
   :root {
     /* Main Menu Font Family */
-    --bringer-t-menu-ff: var(--bringer-t-heading-ff);
+    --fcx-t-menu-ff: var(--fcx-t-heading-ff);
 
     /* Main Menu Font Weight */
-    --bringer-t-menu-fw: var(--bringer-t-heading-fw);
+    --fcx-t-menu-fw: var(--fcx-t-heading-fw);
 
     /* Main Menu Font Size */
-    --bringer-t-menu-fs: 32px;
+    --fcx-t-menu-fs: 32px;
 
     /* Main Menu Line Heiight */
-    --bringer-t-menu-lh: 1.2em;
+    --fcx-t-menu-lh: 1.2em;
 
     /* Sub-Menu Font Family */
-    --bringer-t-submenu-ff: var(--bringer-t-content-ff);
+    --fcx-t-submenu-ff: var(--fcx-t-content-ff);
 
     /* Main Menu Font Weight */
-    --bringer-t-submenu-fw: var(--bringer-t-content-fw);
+    --fcx-t-submenu-fw: var(--fcx-t-content-fw);
 
     /* Main Menu Font Size */
-    --bringer-t-submenu-fs: 16px;
+    --fcx-t-submenu-fs: 16px;
 
     /* Main Menu Line Heiight */
-    --bringer-t-submenu-lh: 1.4em;
+    --fcx-t-submenu-lh: 1.4em;
   }
 }
 
 /* === Tablet: Portrait === */
 @media only screen and (max-width: 960px) {
   :root {
-    --bringer-t-h1-fs: 55px;
+    --fcx-t-h1-fs: 55px;
     --stg-container-width: 590px;
-    --bringer-header-spacing: 12px;
+    --fcx-header-spacing: 12px;
   }
 }
 
@@ -394,19 +394,19 @@
   :root {
     --stg-container-width: calc(100svw - 2 * var(--stg-gap));
 
-    --bringer-t-h1-fs: 48px;
-    --bringer-t-h2-fs: 32px;
-    --bringer-t-h3-fs: 28px;
-    --bringer-t-h4-fs: 24px;
-    --bringer-t-h5-fs: 20px;
-    --bringer-t-h6-fs: 18px;
-    --bringer-t-large-fs: 17px;
+    --fcx-t-h1-fs: 48px;
+    --fcx-t-h2-fs: 32px;
+    --fcx-t-h3-fs: 28px;
+    --fcx-t-h4-fs: 24px;
+    --fcx-t-h5-fs: 20px;
+    --fcx-t-h6-fs: 18px;
+    --fcx-t-large-fs: 17px;
 
-    --bringer-xl-br: 32px;
-    --bringer-large-br: 24px;
-    --bringer-default-br: 16px;
-    --bringer-small-br: 8px;
-    --bringer-xs-br: 4px;
+    --fcx-xl-br: 32px;
+    --fcx-large-br: 24px;
+    --fcx-default-br: 16px;
+    --fcx-small-br: 8px;
+    --fcx-xs-br: 4px;
 
     --stg-gap: 20px;
     --stg-d-gap: 20px;
@@ -415,9 +415,9 @@
     --stg-small-gap: 12px;
     --stg-large-gap: 40px;
     --stg-xl-gap: 80px;
-    --bringer-section-gap: 80px;
+    --fcx-section-gap: 80px;
 
-    --bringer-socials-gap: 12px;
+    --fcx-socials-gap: 12px;
   }
 }
 
@@ -434,6 +434,9 @@
   --icon-star-full: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12'%3E%3Cpath d='m6 0 2.009 3.989 3.991.5-2.739 3.1.757 4.409L6 10.017 1.983 12l.756-4.411L0 4.489l3.989-.5Z'/%3E%3C/svg%3E");
   --icon-arrow-submit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M-.001 17.21h27.4l-13.1 13.083 1.7 1.708 16-16-16-16-1.707 1.707 13.1 13.083H-.001Z'/%3E%3C/svg%3E");
   --icon-arrow-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M11.092-.001v20.548L1.28 10.719l-1.281 1.28 12 12 12-12-1.28-1.28-9.812 9.828V-.001Z'/%3E%3C/svg%3E");
+
+  --icon-fcx-arrow-down: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M7.2,15.7c0.4,0.4,1.2,0.4,1.6,0l5.7-5.7c0.4-0.4,0.4-1.2,0-1.6c-0.4-0.4-1.2-0.4-1.6,0l-3.8,3.8v-11C9.1,0.5,8.6,0,8,0 S6.9,0.5,6.9,1.1v11L3.1,8.3c-0.4-0.4-1.2-0.4-1.6,0C1,8.8,1,9.5,1.5,10L7.2,15.7L7.2,15.7z'/></svg>");
+
   --icon-arrow-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M24.001 11.092H3.453l9.828-9.812-1.28-1.281-12 12 12 12 1.28-1.28-9.828-9.812h20.548Z'/%3E%3C/svg%3E");
   --icon-arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M0 11.092h20.548L10.72 1.28 12 0l12 12-12 12-1.28-1.28 9.828-9.812H0Z'/%3E%3C/svg%3E");
   --icon-cross: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath d='m17.076 19.436-7.077-7.077-7.077 7.077a1.668 1.668 0 0 1-2.359 0 1.668 1.668 0 0 1 0-2.359L7.639 10 .562 2.923a1.67 1.67 0 0 1 0-2.36 1.67 1.67 0 0 1 2.36 0L9.999 7.64 17.076.563a1.669 1.669 0 0 1 2.359 0 1.669 1.669 0 0 1 0 2.36L12.358 10l7.077 7.077a1.668 1.668 0 0 1 0 2.359 1.661 1.661 0 0 1-1.179.489 1.664 1.664 0 0 1-1.18-.489Z'/%3E%3C/svg%3E");
