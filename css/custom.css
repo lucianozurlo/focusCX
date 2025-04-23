@@ -109,9 +109,124 @@ button:not([class*="pswp"]) {
   margin-bottom: calc(var(--stg-gap) - 28px);
 }
 
-/* .space-around {
-  justify-content: space-around;
+/* MODAL */
+#modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
 }
-.stg-row.gap-small {
-  gap: var(--stg-small-gap);
-} */
+
+#modal.open {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s ease-in-out;
+}
+
+#modal-wrapper {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+#modal-content {
+  background-color: transparent;
+  width: 994px;
+  height: 700px;
+  -webkit-clip-path: inset(0 0 70px 0);
+  clip-path: inset(0 0 70px 0);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+#modal-close {
+  position: absolute;
+  top: -17px;
+  right: -33px;
+  color: #aaa;
+  font-size: 34px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+#modal-close:hover,
+#modal-close:focus {
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+#modal-iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+@media only screen and (max-width: 960px) {
+  .fcx-mobile-menu-toggler {
+    background: transparent;
+  }
+
+  .fcx-hero-type07 .fcx-page-title {
+    font-size: var(--fcx-t-h1-fs);
+  }
+
+  .align-center h2 {
+    font-weight: 500;
+  }
+
+  .order-1 {
+    order: 1;
+  }
+
+  #customerjourney .columna {
+    margin-bottom: 14px;
+  }
+
+  #contacto .fcx-cta-form-title {
+    text-align: center;
+  }
+  #contacto .fcx-cta-form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  #modal-wrapper {
+    width: 80%;
+  }
+  #modal-content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #modal-content {
+    width: 100%;
+    height: 90vh;
+    -webkit-clip-path: unset;
+    clip-path: unset;
+  }
+
+  #modal-close {
+    top: 6px;
+    right: 20px;
+  }
+}

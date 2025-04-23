@@ -22,7 +22,7 @@
         <div class="fcx-header-inner">
             <div class="fcx-header-lp">
                 <a href="#home" class="fcx-logo">
-                    <img src="img/focusCX - logo.svg" alt="FocusCX" width="88" height="24">
+                    <img src="img/focusCX-logo.svg" alt="FocusCX" width="88" height="24">
                 </a>
             </div>
             <div class="fcx-header-mp">
@@ -55,7 +55,7 @@
         </div>
         <div class="fcx-mobile-header-inner">
             <a href="#home" class="fcx-logo">
-                <img src="img/focusCX - favicon.svg" alt="FocusCX" width="88" height="24">
+                <img src="img/focusCX-logo.svg" alt="FocusCX" width="88" height="24">
             </a>
             <a href="#" class="fcx-mobile-menu-toggler">
                 <i class="fcx-menu-toggler-icon">
@@ -651,7 +651,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" target="_blank" class="fcx-button">Agendá una reunión</a>
+                            <a href="#" class="fcx-button book"
+                                data-modal-url="https://calendar.google.com/calendar/embed?src=agenda.focuscx%40gmail.com&ctz=America%2FArgentina%2FBuenos_Aires">
+                                Agendá una reunión
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -668,6 +671,15 @@
             </div>
         </footer>
     </main>
+
+    <div id="modal">
+        <div id="modal-wrapper">
+            <span id="modal-close">&times;</span>
+            <div id="modal-content">
+                <iframe id="modal-iframe" src="" allow="fullscreen"></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/libs.js"></script>
@@ -723,6 +735,40 @@
             $(window).trigger('scroll');
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('modal');
+            const iframe = document.getElementById('modal-iframe');
+            const closeBtn = document.getElementById('modal-close');
+            const openLinks = document.querySelectorAll('a.fcx-button.book');
+
+            function openModal(url) {
+                iframe.src = url;
+                modal.classList.add('open');
+            }
+
+            function closeModal() {
+                modal.classList.remove('open');
+                // opcional: limpiar src para detener la carga
+                setTimeout(() => iframe.src = '', 300);
+            }
+
+            openLinks.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    openModal(link.dataset.modalUrl);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', e => {
+                if (e.target === modal) closeModal();
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
