@@ -638,7 +638,7 @@ class fcx_Marquee {
     this.init_speed =
       this.$marquee.attr("data-type") !== undefined
         ? parseInt(this.$marquee.attr("data-speed"), 10)
-        : 20000;
+        : 70000;
     this.speed = this.init_speed;
 
     this.$inner = this.$marquee.children(".fcx-marquee-inner");

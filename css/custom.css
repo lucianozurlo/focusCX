@@ -1,9 +1,31 @@
-/* .fcx-lwp-roster {
-  justify-content: center;
+/* html {
+  scroll-behavior: smooth;
 } */
 
 .mb-0 {
   margin-bottom: 0 !important;
+}
+
+nav.fcx-nav ul.main-menu > li > a {
+  opacity: 0.7;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  transition: all 0.3s ease-in-out;
+}
+
+nav.fcx-nav ul.main-menu > li > a:hover {
+  color: var(--fcx-c-menu-active);
+  opacity: 1 !important;
+}
+
+.fcx-active-menu-ind {
+  transition: all 0.3s ease-in-out;
+}
+ul.main-menu li.current-menu-parent > a,
+ul.main-menu li.current-menu-item > a,
+ul.main-menu li.current-menu-ancestor > a {
+  opacity: 1 !important;
 }
 
 input[type="button"],
@@ -51,8 +73,8 @@ a.fcx-button {
   gap: var(--stg-small-gap);
 }
 
-#journey .columna h6,
-#journey .columna li {
+#customerjourney .columna h6,
+#customerjourney .columna li {
   margin-bottom: 10px;
 }
 
@@ -64,11 +86,23 @@ header .fcx-logo img {
 }
 .fcx-marquee {
   background: unset;
+  overflow: visible;
 }
 
+.fcx-marquee-list li img {
+  border-radius: 0;
+}
+.fcx-marquee-list li {
+  margin: 0 3rem;
+}
 .fcx-marquee-list li::before {
   display: none;
 }
 .fcx-marquee-list img {
   height: 110px;
+}
+.fcx-icon-box .fcx-box-icon img {
+  border-radius: 0;
+  height: 32px;
+  width: 32px;
 }
