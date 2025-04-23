@@ -182,6 +182,15 @@ button:not([class*="pswp"]) {
   transition: all 0.2s ease-in-out;
 }
 
+@media only screen and (max-width: 1090px) {
+  #modal-wrapper {
+    width: 80%;
+  }
+  #modal-content {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 960px) {
   .fcx-mobile-menu li {
     font-weight: 500;
@@ -197,6 +206,11 @@ button:not([class*="pswp"]) {
     font-size: var(--fcx-t-h1-fs);
   }
 
+  #home h1,
+  #home p {
+    text-align: center;
+  }
+
   .align-center h2 {
     font-weight: 500;
   }
@@ -207,6 +221,9 @@ button:not([class*="pswp"]) {
 
   #customerjourney .columna {
     margin-bottom: 14px;
+  }
+  #customerjourney .stg-row {
+    align-items: flex-start !important;
   }
 
   #contacto .fcx-cta-form-title {
@@ -229,16 +246,10 @@ button:not([class*="pswp"]) {
   }
 }
 
-@media only screen and (max-width: 1090px) {
-  #modal-wrapper {
-    width: 80%;
-  }
-  #modal-content {
-    width: 100%;
-  }
-}
-
 @media only screen and (max-width: 768px) {
+  #customerjourney .stg-row {
+    align-items: center !important;
+  }
   #modal-content {
     width: 100%;
     height: 50vh;
