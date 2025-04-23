@@ -13,11 +13,22 @@
     <link type="text/css" rel="stylesheet" href="css/libs.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/responsive.css">
+    <link type="text/css" rel="stylesheet" href="css/preload.css">
     <link type="text/css" rel="stylesheet" href="css/focuscx.css">
     <link rel="icon" href="img/favicon.png" sizes="32x32">
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="preload-wrapper">
+            <img src="img/focusCX-favicon-gris.svg" alt="Imagen de fondo" class="empty-image">
+            <img src="img/focusCX-favicon.svg" alt="Imagen de relleno" class="fill-image">
+        </div>
+        <p id="loading-text">
+            Cargando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+        </p>
+    </div>
+
     <header id="fcx-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
         <div class="fcx-header-inner">
             <div class="fcx-header-lp">
@@ -686,6 +697,38 @@
     <script src="js/st-core.js"></script>
     <script src="js/classes.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fillImage = document.querySelector(".fill-image");
+            const preloader = document.getElementById("preloader");
+            const mainContent = document.getElementById("mainContent");
+            const loadingText = document.getElementById("loading-text");
+
+            setTimeout(() => {
+                fillImage.style.clipPath = "inset(0 0 0 0)";
+            }, 100);
+
+            fillImage.addEventListener("transitionend", (e) => {
+                if (e.propertyName === "clip-path") {
+                    loadingText.style.transition = "transform 1s ease-out, opacity .3s ease-out";
+                    loadingText.style.transform = "translateY(100%)";
+                    loadingText.style.opacity = "0";
+
+                    preloader.style.transition = "opacity 1s ease-out";
+                    preloader.style.opacity = "0";
+                }
+            });
+
+            preloader.addEventListener("transitionend", (e) => {
+                if (e.propertyName === "opacity" && e.target === preloader) {
+                    preloader.style.display = "none";
+                    mainContent.style.transition = "opacity 1s ease-out";
+                    mainContent.style.opacity = "1";
+                }
+            });
+        });
+    </script>
 
     <script>
         (function () {
