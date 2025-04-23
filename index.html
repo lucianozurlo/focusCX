@@ -742,41 +742,56 @@
 
     <script>
         $(function () {
-            const $header = $('#fcx-header');
-            const headerH = $header.outerHeight();
-
-            // 1. Smooth scroll con offset
-            $('a[href^="#"]').on('click', function (e) {
-                e.preventDefault();
-                const target = $($(this).attr('href'));
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top - headerH
-                    }, 1000);
-                }
-            });
-
-            // 2. Highlight del menú al hacer scroll
+            const headerH = $('#fcx-header').outerHeight();
             const $sections = $('section[id]');
-            const $menuItems = $('.main-menu li');
-            $(window).on('scroll', function () {
+
+            // Función para resaltar la sección activa
+            function updateActive() {
                 const scrollPos = $(window).scrollTop();
+                $('nav li.current-menu-parent').removeClass('current-menu-parent');
                 $sections.each(function () {
                     const $sec = $(this);
                     const top = $sec.offset().top - headerH - 10;
                     const bottom = top + $sec.outerHeight();
-                    const id = $sec.attr('id');
                     if (scrollPos >= top && scrollPos < bottom) {
-                        $menuItems.removeClass('current-menu-parent');
-                        $('.main-menu a[href="#' + id + '"]').parent().addClass('current-menu-parent');
+                        const id = $sec.attr('id');
+                        $('nav a[href="#' + id + '"]').parent('li')
+                            .addClass('current-menu-parent');
+                        return false;
                     }
                 });
+            }
+
+            // Delegación global de clicks en <a href="#...">
+            $(document).on('click', 'a[href^="#"]', function (e) {
+                const $link = $(this);
+                const href = $link.attr('href');
+
+                // 1) Ignorar el toggler del side-menu
+                if ($link.is('.fcx-mobile-menu-toggler')) return;
+
+                // 2) Asegurarnos de que exista la sección destino
+                const $target = $(href);
+                if (!$target.length) return;
+
+                // 3) Si llegamos hasta acá, es un ancla válida: 
+                e.preventDefault();
+
+                // cerramos el side-menu
+                $('body').removeClass('show-menu');
+
+                // smooth scroll con offset
+                $('html, body').stop().animate({
+                    scrollTop: $target.offset().top - headerH
+                }, 400, 'swing', updateActive);
             });
 
-            // dispará una vez al cargar para setear el estado inicial
-            $(window).trigger('scroll');
+            // Actualizar highlight al hacer scroll y al cargar
+            $(window).on('scroll', updateActive);
+            updateActive();
         });
     </script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {

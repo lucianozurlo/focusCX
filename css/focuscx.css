@@ -36,6 +36,12 @@ ul.main-menu li.current-menu-item > a,
 ul.main-menu li.current-menu-ancestor > a {
   opacity: 1 !important;
 }
+.fcx-mobile-menu > li.current-menu-parent > a::before,
+.fcx-mobile-menu > li.current-menu-item > a::before,
+.fcx-mobile-menu > li.current-menu-ancestor > a::before,
+.fcx-mobile-menu .sub-menu > li.current-menu-parent > a::before,
+.fcx-mobile-menu .sub-menu > li.current-menu-item > a::before,
+.fcx-mobile-menu .sub-menu > li.current-menu-ancestor > a::before,
 .fcx-active-menu-ind {
   background-color: var(--fcx-s-accent);
 }
@@ -142,8 +148,8 @@ button:not([class*="pswp"]) {
   background-color: transparent;
   width: 994px;
   height: 700px;
-  -webkit-clip-path: inset(0 0 70px 0);
-  clip-path: inset(0 0 70px 0);
+  /* -webkit-clip-path: inset(0 0 70px 0);
+  clip-path: inset(0 0 70px 0); */
   border-radius: 14px;
   display: flex;
   flex-direction: column;
@@ -152,9 +158,9 @@ button:not([class*="pswp"]) {
 
 #modal-close {
   position: absolute;
-  top: -17px;
-  right: -33px;
-  color: #aaa;
+  top: -40px;
+  right: 0;
+  color: #fff;
   font-size: 34px;
   font-weight: bold;
   cursor: pointer;
@@ -177,6 +183,11 @@ button:not([class*="pswp"]) {
 }
 
 @media only screen and (max-width: 960px) {
+  .fcx-mobile-menu li {
+    font-weight: 500;
+    font-size: 28px;
+  }
+
   .fcx-mobile-menu-toggler {
     background: transparent;
     z-index: 111111111111;
@@ -230,13 +241,13 @@ button:not([class*="pswp"]) {
 @media only screen and (max-width: 768px) {
   #modal-content {
     width: 100%;
-    height: 90vh;
+    height: 50vh;
     -webkit-clip-path: unset;
     clip-path: unset;
   }
 
   #modal-close {
-    top: 6px;
-    right: 20px;
+    top: -33px;
+    right: 0;
   }
 }
