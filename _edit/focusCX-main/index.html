@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusCX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet" />
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <link type="text/css" rel="stylesheet" href="css/config.css">
+    <link type="text/css" rel="stylesheet" href="css/libs.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/responsive.css">
+    <link type="text/css" rel="stylesheet" href="css/preload.css">
+    <link type="text/css" rel="stylesheet" href="css/focuscx.css">
+    <link rel="icon" href="img/favicon.png" sizes="32x32">
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="preload-wrapper">
+            <img src="img/focusCX-favicon-gris.svg" alt="Imagen de fondo" class="empty-image">
+            <img src="img/focusCX-favicon.svg" alt="Imagen de relleno" class="fill-image">
+        </div>
+        <p id="loading-text">
+            Cargando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+        </p>
+    </div>
+
+    <header id="fcx-header" class="is-frosted is-sticky" data-appear="fade-down" data-unload="fade-up">
+        <div class="fcx-header-inner">
+            <div class="fcx-header-lp">
+                <a href="#home" class="fcx-logo">
+                    <img src="img/focusCX-logo.svg" alt="FocusCX" width="88" height="24">
+                </a>
+            </div>
+            <div class="fcx-header-mp">
+                <nav class="fcx-nav">
+                    <ul class="main-menu" data-stagger-appear="fade-down" data-stagger-delay="75">
+                        <li class="current-menu-parent">
+                            <a href="#soluciones">Soluciones</a>
+                        </li>
+                        <li>
+                            <a href="#customerjourney">Customer Journey</a>
+                        </li>
+                        <li>
+                            <a href="#sectores">Sectores</a>
+                        </li>
+                        <li>
+                            <a href="#consejos">Consejos</a>
+                        </li>
+                        <li>
+                            <a href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <ul class="fcx-socials-list" data-stagger-appear="fade-down" data-stagger-delay="75">
+                <li class="in-view" data-delay="0" data-unload="none" data-threshold="0.5">
+                    <a href="https://www.linkedin.com/company/focuscx/" target="_blank"
+                        class="fcx-socials-linkedin"><i></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="fcx-mobile-header-inner">
+            <a href="#home" class="fcx-logo">
+                <img src="img/focusCX-logo.svg" alt="FocusCX" width="88" height="24">
+            </a>
+            <a href="#" class="fcx-mobile-menu-toggler">
+                <i class="fcx-menu-toggler-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </i>
+            </a>
+        </div>
+    </header>
+
+    <main id="fcx-main">
+        <div class="stg-container">
+
+            <section id="home" class="backlight-bottom">
+                <div class="fcx-hero-block fcx-hero-type07">
+
+                    <div class="stg-row flex-end">
+                        <div class="stg-col-6 stg-tp-col-12 stg-m-col-12 stg-tp-bottom-gap" data-unload="fade-left">
+                            <h1 class="fcx-page-title m-align-center" data-split-appear="fade-left">
+                                Transformamos la Experiencia</h1>
+                        </div>
+                        <div class="stg-col-6 stg-tp-col-12" data-unload="fade-right">
+                            <div class="align-right stg-bottom-gap-xs stg-tp-bottom-gap-none m-align-center"
+                                data-appear="fade-down">
+                                <p class="fcx-large-text">Soluciones integrales de CX, UX y EX para múltiples
+                                    industrias, potenciadas por IA, automatización y estrategias omnicanal.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fcx-hero-media-wrap fcx-masked-block stg-bottom-gap stg-m-bottom-gap-s"
+                        data-appear="zoom-out" style="margin-top: var(--stg-gap)">
+                        <div class="swiper fcx-slider fcx-masked-media" data-autoplay="3000" data-duration="1000"
+                            data-effect="coverflow">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="img/home/home1.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home2.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home3.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home4.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home5.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home6.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home7.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home8.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/home/home9.jpg" alt="We are fcx" width="1200" height="600">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fcx-slider-nav fcx-masked-content at-bottom-right">
+                            <a href="#" class="fcx-slider-prev">
+                                <span class="fcx-icon fcx-icon-chevron-left"></span>
+                            </a>
+                            <a href="#" class="fcx-slider-next">
+                                <span class="fcx-icon fcx-icon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <section id="soluciones" class="backlight-bottom" data-unload="zoom-out">
+                <div class="stg-row fcx-section-title">
+                    <div class="stg-col-8 stg-offset-2">
+                        <div class="align-center">
+                            <h2 data-appear="fade-up" data-unload="fade-up">Soluciones & Metodología</h2>
+                            <p class="fcx-large-text" data-appear="fade-up" data-unload="fade-up" data-delay="100">
+                                En Focus CX ayudamos a las organizaciones a ofrecer experiencias excepcionales a
+                                clientes y colaboradores.</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="stg-row stg-large-gap stg-valign-middle stg-bottom-gap-l stg-tp-bottom-gap-xl stg-tp-column-reverse stg-m-bottom-gap-l stg-m-normal-gap">
+                    <div class="stg-col-6" data-appear="fade-right" data-unload="fade-left">
+                        <h3>¿Qué Hacemos?</h3>
+                        <p class="fcx-large-text">Analizamos el comportamiento de cada actor y aplicamos metodologías
+                            ágiles para diseñar soluciones que generan valor real.</p>
+                        <p>Contamos con nuestro Asistente Virtual Comercial, impulsado por IA, que automatiza la
+                            comunicación y mejora el engagement en cada etapa del Customer Journey.</p>
+                    </div>
+                    <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap-l order-1" data-appear="fade-left"
+                        data-unload="fade-right">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/soluciones/que-hacemos.jpg"
+                                alt="About Us" width="960" height="960">
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="stg-row stg-large-gap stg-valign-middle stg-bottom-gap-l stg-tp-bottom-gap-xl stg-tp-column-reverse stg-m-bottom-gap-l stg-m-normal-gap">
+                    <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap-l order-1" data-appear="fade-right"
+                        data-delay="50" data-unload="fade-left">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/soluciones/framework.jpg"
+                                alt="We are fcx" width="960" height="960">
+                        </div>
+                    </div>
+                    <div class="stg-col-6" data-appear="fade-left" data-delay="50" data-unload="fade-right">
+                        <h3>Framework de Trabajo & Metodología</h3>
+                        <div class="fcx-grid-2cols stg-normal-gap" data-stagger-appear="fade-left">
+                            <div class="fcx-subgrid-item" style="gap: 16px;">
+                                <div class="fcx-title-with-meta">
+                                    <span class="fcx-label">Fase 1</span>
+                                    <h5>Comprender</h5>
+                                </div>
+                                <div>Relevamos necesidades, expectativas y motivaciones a través de nuestro programa
+                                    VoC, colocando al cliente en el centro del desafío.</div>
+                            </div>
+
+                            <div class="fcx-subgrid-item" style="gap: 16px;">
+                                <div class="fcx-title-with-meta">
+                                    <span class="fcx-label">Fase 2</span>
+                                    <h5>Diseñar</h5>
+                                </div>
+                                <div>Generamos conceptos y prototipos basados en el análisis de la experiencia actual
+                                    para crear soluciones de alto valor.</div>
+                            </div>
+
+                            <div class="fcx-subgrid-item" style="gap: 16px;">
+                                <div class="fcx-title-with-meta">
+                                    <span class="fcx-label">Fase 3</span>
+                                    <h5>Impulsar</h5>
+                                </div>
+                                <div>Implementamos soluciones en ciclos iterativos: prototipamos, probamos, analizamos y
+                                    ajustamos en tiempo real.</div>
+                            </div>
+
+                            <div class="fcx-subgrid-item" style="gap: 16px;">
+                                <div class="fcx-title-with-meta">
+                                    <span class="fcx-label">Fase 4</span>
+                                    <h5>Concientizar</h5>
+                                </div>
+                                <div>Capacitamos y alineamos a los colaboradores para adoptar una cultura Customer
+                                    Centric, empoderándolos para crear experiencias memorables.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="stg-row stg-large-gap stg-valign-middle stg-bottom-gap-l stg-tp-bottom-gap-xl stg-tp-column-reverse stg-m-bottom-gap-l stg-m-normal-gap">
+                    <div class="stg-col-6" data-appear="fade-right" data-unload="fade-left">
+                        <h3>IA, Omnicanalidad y Automatización (RPA)</h3>
+                        <p class="fcx-large-text">Integramos inteligencia artificial, automatización de procesos (RPA) y
+                            estrategias omnicanal en cada etapa del Customer Journey para optimizar la experiencia del
+                            cliente.</p>
+                        <ul class="fcx-marked-list">
+                            <li>Chatbots y Asistentes Virtuales (incluyendo nuestro Asistente Virtual Comercial siempre
+                                visible).</li>
+                            <li>Recomendaciones personalizadas basadas en IA.</li>
+                            <li>Procesos automatizados de back-office y seguimiento post-venta.</li>
+                            <li>Análisis de sentimiento en redes sociales.</li>
+                        </ul>
+                    </div>
+                    <div class="stg-col-6 stg-tp-bottom-gap-l stg-m-bottom-gap-l order-1" data-appear="fade-left"
+                        data-unload="fade-right">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/soluciones/omnicanalidad.jpg"
+                                alt="About Us" width="960" height="960">
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="customerjourney">
+                <div class="stg-bottom-gap-l">
+                    <h2 data-appear="fade-up" data-unload="fade-up">Customer Journey & Servicios</h2>
+                </div>
+
+                <div class="fcx-expand-on-scroll">
+                    <img class="fcx-lazy" src="img/null.png" data-src="img//customerjourney/customerjourney.svg"
+                        alt="Customer Journey" width="1920" height="960">
+                </div>
+
+                <!-- Etapa 1 -->
+                <div class="stg-row gap-small stg-top-gap-l stg-bottom-gap-l stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l divider-bottom"
+                    data-unload="fade-right">
+                    <div class="stg-col-4 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/customerjourney/customerjourney1.jpg"
+                                alt="Etapa 2" width="960" height="960">
+                        </div>
+                    </div>
+                    <div class="stg-col-8 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                        <span class="fcx-label">Etapa 1</span>
+                        <h4>Conocimiento (Awareness)</h4>
+                        <div class="stg-row">
+                            <div class="columna">
+                                <h6>Servicios CX:</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Investigación de Mercado:</span><br />Estudios para
+                                        entender necesidades y preferencias.</li>
+                                    <li><span class="fcx-highlight">
+                                            Análisis Competitivo:</span><br />
+                                        Identificación de fortalezas y debilidades en experiencia.</li>
+                                    <li><span class="fcx-highlight">
+                                            Desarrollo de Contenido:</span><br />
+                                        Creación de contenido atractivo y educativo.</li>
+                                </ul>
+                            </div>
+                            <div class="columna">
+                                <h6>Servicios de IA, Omnicanalidad y Automatización de Procesos (RPA):</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Análisis Predictivo con IA:</span><br />
+                                        Modelos que anticipan necesidades.</li>
+                                    <li><span class="fcx-highlight">
+                                            Automatización de Campañas Publicitarias:</span><br />
+                                        Segmentación y personalización en diversos canales.</li>
+                                    <li><span class="fcx-highlight">
+                                            Integración Omnicanal:</span><br />
+                                        Coherencia en mensajes a través de redes, email y publicidad.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Etapa 2 Row -->
+                <div class="stg-row gap-small stg-bottom-gap-l stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l divider-bottom"
+                    data-unload="fade-right">
+                    <div class="stg-col-4 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/customerjourney/customerjourney2.jpg"
+                                alt="Etapa 2" width="960" height="960">
+                        </div>
+                    </div>
+                    <div class="stg-col-8 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                        <span class="fcx-label">Etapa 2</span>
+                        <h4>Consideración (Consideration)</h4>
+                        <div class="stg-row">
+                            <div class="columna">
+                                <h6>Servicios CX:</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Mapeo del Customer Journey:</span><br />
+                                        Identificación y optimización de todos los puntos de contacto.</li>
+                                    <li><span class="fcx-highlight">
+                                            Segmentación de Audiencia:</span><br />
+                                        División de clientes en grupos para experiencias personalizadas.</li>
+                                    <li><span class="fcx-highlight">
+                                            Diseño de Interacciones Memorables:</span><br />
+                                        Creación de experiencias (eventos, promociones, etc.) que generen impacto.</li>
+                                </ul>
+                            </div>
+                            <div class="columna">
+                                <h6>Servicios de IA, Omnicanalidad y Automatización de Procesos (RPA):</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Chatbots y Asistentes Virtuales:</span><br />
+                                        Respuestas y guía a través del proceso de consideración.</li>
+                                    <li><span class="fcx-highlight">
+                                            Recomendaciones Personalizadas:</span><br />
+                                        Sugerencias basadas en el comportamiento.</li>
+                                    <li><span class="fcx-highlight">
+                                            Análisis de Sentimiento:</span><br />
+                                        Monitoreo de opiniones en redes y otros canales.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Etapa 3 Row -->
+                <div class="stg-row gap-small stg-bottom-gap-l stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l divider-bottom"
+                    data-unload="fade-right">
+                    <div class="stg-col-4 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/customerjourney/customerjourney3.jpg"
+                                alt="Etapa 3" width="960" height="960">
+                        </div>
+                    </div>
+                    <div class="stg-col-8 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                        <span class="fcx-label">Etapa 3</span>
+                        <h4>Compra (Purchase)</h4>
+                        <div class="stg-row">
+                            <div class="columna">
+                                <h6>Servicios CX:</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Optimización del Proceso de Compra:</span><br />
+                                        Simplificación y agilización de la experiencia de compra.</li>
+                                    <li><span class="fcx-highlight">
+                                            Capacitación del Equipo:</span><br />
+                                        Entrenamiento para ofrecer un servicio excepcional.</li>
+                                    <li><span class="fcx-highlight">
+                                            Ofertas Personalizadas:</span><br />
+                                        Descuentos y promociones basadas en datos históricos.</li>
+                                </ul>
+                            </div>
+                            <div class="columna">
+                                <h6>Servicios de IA, Omnicanalidad y Automatización de Procesos (RPA):</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Optimización del Proceso de Compra con IA:</span><br />
+                                        Reducción de fricción y mejora de conversiones.</li>
+                                    <li><span class="fcx-highlight">
+                                            Automatización de Ofertas Personalizadas:</span><br />
+                                        Generación de descuentos en tiempo real.</li>
+                                    <li><span class="fcx-highlight">
+                                            Integración de Pagos Omnicanal:</span><br />
+                                        Pagos seguros a través de múltiples canales.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Etapa 4 Row -->
+                <div class="stg-row gap-small stg-bottom-gap-l stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l divider-bottom"
+                    data-unload="fade-right">
+                    <div class="stg-col-4 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/customerjourney/customerjourney4.jpg"
+                                alt="Etapa 4" width="960" height="960">
+                        </div>
+                    </div>
+                    <div class="stg-col-8 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                        <span class="fcx-label">Etapa 4</span>
+                        <h4>Posventa (Post-Purchase)</h4>
+                        <div class="stg-row">
+                            <div class="columna">
+                                <h6>Servicios CX:</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Programas de Fidelización:</span><br />
+                                        Recompensas que fomentan la retención.</li>
+                                    <li><span class="fcx-highlight">
+                                            Recopilación de Retroalimentación:</span><br />
+                                        Encuestas y análisis de comentarios para mejoras continuas.</li>
+                                    <li><span class="fcx-highlight">
+                                            Servicio de Atención al Cliente:</span><br />
+                                        Soporte personalizado post-compra.</li>
+                                </ul>
+                            </div>
+                            <div class="columna">
+                                <h6>Servicios de IA, Omnicanalidad y Automatización de Procesos (RPA):</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Programas de Fidelización con IA:</span><br />
+                                        Análisis y recompensas personalizadas.</li>
+                                    <li><span class="fcx-highlight">
+                                            Análisis de Retroalimentación con IA:</span><br />
+                                        Identificación de áreas de mejora.</li>
+                                    <li><span class="fcx-highlight">
+                                            Soporte Automatizado:</span><br />
+                                        Chatbots que brindan ayuda inmediata.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Etapa 5 Row -->
+                <div class="stg-row gap-small stg-bottom-gap-l stg-valign-middle stg-tp-row-reverse stg-m-bottom-gap-l divider-bottom"
+                    data-unload="fade-right">
+                    <div class="stg-col-4 stg-tp-col-6 stg-m-bottom-gap" data-appear="fade-left">
+                        <div class="fcx-parallax-media">
+                            <img class="fcx-lazy" src="img/null.png" data-src="img/customerjourney/customerjourney5.jpg"
+                                alt="Etapa 5" width="960" height="960">
+                        </div>
+                    </div>
+                    <div class="stg-col-8 stg-tp-col-6" data-appear="fade-right" data-delay="100">
+                        <span class="fcx-label">Etapa 5</span>
+                        <h4>Lealtad (Loyalty)</h4>
+                        <div class="stg-row">
+                            <div class="columna">
+                                <h6>Servicios CX:</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Análisis de NPS:</span><br />
+                                        Medición de satisfacción y probabilidad de recomendación.</li>
+                                    <li><span class="fcx-highlight">
+                                            Estrategias de Retención:</span><br />
+                                        Campañas para mantener clientes comprometidos.</li>
+                                    <li><span class="fcx-highlight">
+                                            Innovación Continua:</span><br />
+                                        Actualización constante de las experiencias.</li>
+                                </ul>
+                            </div>
+                            <div class="columna">
+                                <h6>Servicios de IA, Omnicanalidad y Automatización de Procesos (RPA):</h6>
+                                <ul class="fcx-marked-list">
+                                    <li><span class="fcx-highlight">
+                                            Modelos Predictivos para Retención:</span><br />
+                                        Identificación temprana del riesgo de abandono.</li>
+                                    <li><span class="fcx-highlight">
+                                            Personalización Continua:</span><br />
+                                        Mantener interacciones personalizadas en cada contacto.</li>
+                                    <li><span class="fcx-highlight">
+                                            Análisis de NPS con IA:</span><br />
+                                        Optimización del Net Promoter Score a través de insights.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="sectores" data-padding="top" class="backlight-top" data-unload="zoom-out">
+                <div class="stg-row stg-bottom-gap-l">
+                    <div class="stg-col-6 stg-tp-bottom-gap" data-appear="fade-right" data-unload="fade-left">
+                        <h2>Sectores en los que Trabajamos</h2>
+                    </div>
+                    <div class="stg-col-6 stg-tp-col-10 stg-tp-offset-2" data-appear="fade-left"
+                        data-unload="fade-right">
+                        <p class="fcx-large-text">En Focus CX estamos presentes en múltiples sectores, adaptando
+                            nuestras soluciones a cada necesidad: Automotriz, Bancos, Telcos, Retail, Servicios,
+                            Petróleo & Energía, Servicios Financieros, Industria Farmacéutica, Consumo Masivo y más.</p>
+                    </div>
+                </div>
+
+                <div class="fcx-grid-3cols stg-bottom-gap-l" data-stagger-appear="fade-up"
+                    data-stagger-unload="fade-left">
+                    <div>
+                        <img class="fcx-lazy" src="img/null.png" data-src="img/sectores/sectores1.jpg" alt="Curology"
+                            data-speed="0.95" data-m-speed="1" width="800" height="1200">
+                    </div>
+                    <div>
+                        <img class="fcx-lazy" src="img/null.png" data-src="img/sectores/sectores2.jpg" alt="Curology"
+                            width="800" height="1200">
+                    </div>
+                    <div>
+                        <img class="fcx-lazy" src="img/null.png" data-src="img/sectores/sectores3.jpg" alt="Curology"
+                            data-speed="1.05" data-m-speed="1" width="800" height="1200">
+                    </div>
+                </div>
+
+                <div class="fcx-marquee" data-speed="150">
+                    <div class="fcx-marquee-inner">
+                        <ul class="fcx-marquee-list">
+                            <li><img src="img/clientes/nestle.png" alt=""></li>
+                            <li><img src="img/clientes/alfaromeo.png" alt=""></li>
+                            <li><img src="img/clientes/andreani.png" alt=""></li>
+                            <li><img src="img/clientes/andromaco.png" alt=""></li>
+                            <li><img src="img/clientes/aon.png" alt=""></li>
+                            <li><img src="img/clientes/bancociudad.png" alt=""></li>
+                            <li><img src="img/clientes/bancocomafi.png" alt=""></li>
+                            <li><img src="img/clientes/bancoprovincia.png" alt=""></li>
+                            <li><img src="img/clientes/case.png" alt=""></li>
+                            <li><img src="img/clientes/cat.png" alt=""></li>
+                            <li><img src="img/clientes/chrilsler.png" alt=""></li>
+                            <li><img src="img/clientes/citroen.png" alt=""></li>
+                            <li><img src="img/clientes/cnh.png" alt=""></li>
+                            <li><img src="img/clientes/dinersclub.png" alt=""></li>
+                            <li><img src="img/clientes/dodge.png" alt=""></li>
+                            <li><img src="img/clientes/ds-automoviles.png" alt=""></li>
+                            <li><img src="img/clientes/fiat.png" alt=""></li>
+                            <li><img src="img/clientes/ford.png" alt=""></li>
+                            <li><img src="img/clientes/galicia.png" alt=""></li>
+                            <li><img src="img/clientes/hospitalitaliano.png" alt=""></li>
+                            <li><img src="img/clientes/icbc.png" alt=""></li>
+                            <li><img src="img/clientes/itau.png" alt=""></li>
+                            <li><img src="img/clientes/iveco.png" alt=""></li>
+                            <li><img src="img/clientes/ivecocapital.png" alt=""></li>
+                            <li><img src="img/clientes/jeep.png" alt=""></li>
+                            <li><img src="img/clientes/lacaja.png" alt=""></li>
+                            <li><img src="img/clientes/lacampagnola.png" alt=""></li>
+                            <li><img src="img/clientes/lcrmd.png" alt=""></li>
+                            <li><img src="img/clientes/macro.png" alt=""></li>
+                            <li><img src="img/clientes/mastercard.png" alt=""></li>
+                            <li><img src="img/clientes/newholand.png" alt=""></li>
+                            <li><img src="img/clientes/olimpiadasespeciales.png" alt=""></li>
+                            <li><img src="img/clientes/peugeot.png" alt=""></li>
+                            <li><img src="img/clientes/phillipsmorris.png" alt=""></li>
+                            <li><img src="img/clientes/posnet.png" alt=""></li>
+                            <li><img src="img/clientes/ram.png" alt=""></li>
+                            <li><img src="img/clientes/santander.png" alt=""></li>
+                            <li><img src="img/clientes/subaru.png" alt=""></li>
+                            <li><img src="img/clientes/supervielle.png" alt=""></li>
+                            <li><img src="img/clientes/telefonica.png" alt=""></li>
+                            <li><img src="img/clientes/temislostalo.png" alt=""></li>
+                            <li><img src="img/clientes/toyota.png" alt=""></li>
+                            <li><img src="img/clientes/unicef.png" alt=""></li>
+                            <li><img src="img/clientes/volkva.png" alt=""></li>
+                            <li><img src="img/clientes/ypf.png" alt=""></li>
+                            <li><img src="img/clientes/zuzuki.png" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="consejos">
+                <div class="align-center stg-bottom-gap-l">
+                    <h2 data-split-appear="fade-up" data-unload="fade-up">Consejos</h2>
+                    <p class="fcx-large-text" data-appear="fade-up" data-delay="100" data-unload="fade-up">
+                        Te compartimos algunos tips para mejorar la experiencia de tus clientes:</p>
+                </div>
+
+                <div class="fcx-grid-2cols" data-stagger-appear="zoom-in" data-delay="150" data-unload="fade-up">
+
+                    <div class="fcx-icon-box fcx-block">
+                        <h4>Conocé a tus clientes</h4>
+                        <ul class="fcx-marked-list">
+                            <li>Investiga y analizá necesidades, preferencias y comportamientos a través de encuestas y
+                                datos.</li>
+                            <li>Creá perfiles detallados para personalizar la experiencia.</li>
+                        </ul>
+                        <div class="fcx-box-icon">
+                            <img src="img/consejos/person_search.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fcx-icon-box fcx-block">
+                        <h4>Diseñá experiencias omnicanal</h4>
+                        <ul class="fcx-marked-list">
+                            <li>Integrá todos los canales para asegurar una experiencia coherente, ya sea física,
+                                digital o telefónica.</li>
+                            <li>Permití un flujo suave entre canales para una interacción continua.</li>
+                        </ul>
+                        <div class="fcx-box-icon">
+                            <img src="img/consejos/device_hub.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fcx-icon-box fcx-block">
+                        <h4>Fomentá la personalización y la accesibilidad</h4>
+                        <ul class="fcx-marked-list">
+                            <li>Ofrecé promociones y recomendaciones basadas en datos e historial de clientes.</li>
+                            <li>Comunicate de forma personalizada, usando el nombre del cliente y haciendo referencia a
+                                interacciones previas.</li>
+                            <li>Diseñá interfaces intuitivas, fáciles de navegar e inclusivas para personas con
+                                diversidad funcional.</li>
+                        </ul>
+                        <div class="fcx-box-icon">
+                            <img src="img/consejos/accessibility_new.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fcx-icon-box fcx-block">
+                        <h4>Fomentá la retroalimentación y mejora continua</h4>
+                        <ul class="fcx-marked-list">
+                            <li>Solicitá comentarios y sugerencias para identificar áreas de mejora.</li>
+                            <li>Implementá cambios que demuestren que valorás la opinión de tus clientes.</li>
+                        </ul>
+                        <div class="fcx-box-icon">
+                            <img src="img/consejos/star.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fcx-icon-box fcx-block">
+                        <h4>Capacitá a tu equipo</h4>
+                        <ul class="fcx-marked-list">
+                            <li>Formá y empoderá a tus colaboradores para ofrecer un servicio excepcional.</li>
+                        </ul>
+                        <div class="fcx-box-icon">
+                            <img src="img/consejos/psychology.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fcx-icon-box fcx-block">
+                        <h4>Medí y analizá el rendimiento</h4>
+                        <ul class="fcx-marked-list">
+                            <li>Utilizá KPIs (NPS, CSAT, CES) para evaluar el éxito de tus estrategias y optimizar la
+                                experiencia.</li>
+                        </ul>
+                        <div class="fcx-box-icon">
+                            <img src="img/consejos/equalizer.svg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="contacto" class="backlight-top is-fullwidth">
+                <div class="stg-row stg-valign-middle stg-cta-with-image stg-tp-column-reverse">
+                    <div class="stg-col-5" data-unload="fade-left">
+                        <div class="fcx-offset-image" data-bg-src="img/contacto.jpg" data-appear="fade-up"
+                            data-threshold="0.25"></div>
+                        <form action="" method="post" class="fcx-contact-form fcx-block"
+                            data-fill-error="Please, fill out the contact form." data-appear="fade-right"
+                            data-threshold="0.25">
+                            <div class="fcx-form-content">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Nombre" required>
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+                                <button type="submit" value="Enviar">Enviar</button>
+                                <div class="fcx-contact-form__response"></div>
+                            </div>
+                            <span class="fcx-form-spinner"></span>
+                        </form>
+                    </div>
+                    <div class="stg-col-6 stg-offset-1" data-unload="fade-right">
+                        <div class="fcx-cta-form-content">
+                            <div class="fcx-cta-form-title" data-split-appear="fade-up" data-split-delay="100"
+                                data-split-by="line">
+                                ¿Cómo vas a revolucionar la experiencia en tu organización?
+                            </div>
+                            <div class="fcx-cta-text">
+                                <div class="stg-row stg-valign-middle">
+                                    <div class="stg-col-12" data-appear="fade-left">
+                                        <p class="fcx-large-text">Contanos tus desafíos.<br />Nosotros te ayudamos a
+                                            convertirlos en oportunidades.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="fcx-button book"
+                                data-modal-url="https://calendar.google.com/calendar/embed?src=agenda.focuscx%40gmail.com&ctz=America%2FArgentina%2FBuenos_Aires">
+                                Programar una cita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer id="fcx-footer" data-appear="fade-up" data-unload="fade-down">
+
+            <div class="fcx-footer-line stg-container">
+                <div class="align-center">
+                    FocuxCX &copy; 2025
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div id="modal">
+        <div id="modal-wrapper">
+            <span id="modal-close">&times;</span>
+            <div id="modal-content">
+                <iframe id="modal-iframe" src="" frameborder="0" allowfullscreen
+                    style="width:100%; height:100%; border:none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/libs.js"></script>
+    <script src="js/contact_form.js"></script>
+    <script src="js/st-core.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fillImage = document.querySelector(".fill-image");
+            const preloader = document.getElementById("preloader");
+            const mainContent = document.getElementById("mainContent");
+            const loadingText = document.getElementById("loading-text");
+
+            setTimeout(() => {
+                fillImage.style.clipPath = "inset(0 0 0 0)";
+            }, 100);
+
+            fillImage.addEventListener("transitionend", (e) => {
+                if (e.propertyName === "clip-path") {
+                    loadingText.style.transition = "transform 1s ease-out, opacity .3s ease-out";
+                    loadingText.style.transform = "translateY(100%)";
+                    loadingText.style.opacity = "0";
+
+                    preloader.style.transition = "opacity 1s ease-out";
+                    preloader.style.opacity = "0";
+                }
+            });
+
+            preloader.addEventListener("transitionend", (e) => {
+                if (e.propertyName === "opacity" && e.target === preloader) {
+                    preloader.style.display = "none";
+                    mainContent.style.transition = "opacity 1s ease-out";
+                    mainContent.style.opacity = "1";
+                }
+            });
+        });
+    </script>
+
+    <script>
+        (function () {
+            let js = document.createElement('script');
+            js.type = 'text/javascript';
+            js.async = 1;
+            js.src = 'https://go.botmaker.com/rest/webchat/p/P1733IPJAD/init.js';
+            document.body.appendChild(js);
+        })();
+    </script>
+
+    <script>
+        $(function () {
+            const headerH = $('#fcx-header').outerHeight();
+            const $sections = $('section[id]');
+
+            // Función para resaltar la sección activa
+            function updateActive() {
+                const scrollPos = $(window).scrollTop();
+                $('nav li.current-menu-parent').removeClass('current-menu-parent');
+                $sections.each(function () {
+                    const $sec = $(this);
+                    const top = $sec.offset().top - headerH - 10;
+                    const bottom = top + $sec.outerHeight();
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        const id = $sec.attr('id');
+                        $('nav a[href="#' + id + '"]').parent('li')
+                            .addClass('current-menu-parent');
+                        return false;
+                    }
+                });
+            }
+
+            // Delegación global de clicks en <a href="#...">
+            $(document).on('click', 'a[href^="#"]', function (e) {
+                const $link = $(this);
+                const href = $link.attr('href');
+
+                // 1) Ignorar el toggler del side-menu
+                if ($link.is('.fcx-mobile-menu-toggler')) return;
+
+                // 2) Asegurarnos de que exista la sección destino
+                const $target = $(href);
+                if (!$target.length) return;
+
+                // 3) Si llegamos hasta acá, es un ancla válida: 
+                e.preventDefault();
+
+                // cerramos el side-menu
+                $('body').removeClass('show-menu');
+
+                // smooth scroll con offset
+                $('html, body').stop().animate({
+                    scrollTop: $target.offset().top - headerH
+                }, 400, 'swing', updateActive);
+            });
+
+            // Actualizar highlight al hacer scroll y al cargar
+            $(window).on('scroll', updateActive);
+            updateActive();
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('modal');
+            const iframe = document.getElementById('modal-iframe');
+            const closeBtn = document.getElementById('modal-close');
+            const openLinks = document.querySelectorAll('a.fcx-button.book');
+
+            function openModal() {
+                // Ponés aquí tu URL de scheduling, tal cual Google te da:
+                iframe.src = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0GpEz147zbOdyUzq9H9Z0Vo2qEMKZYXeS9cPUZqNotYMI63Nwb5_qOsd66qbF7oEBFjrcx54R-?gv=true';
+                modal.classList.add('open');
+            }
+
+            function closeModal() {
+                modal.classList.remove('open');
+                // opcional: limpiar src para detener la carga al cerrar
+                setTimeout(() => iframe.src = '', 300);
+            }
+
+            openLinks.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', e => {
+                if (e.target === modal) closeModal();
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

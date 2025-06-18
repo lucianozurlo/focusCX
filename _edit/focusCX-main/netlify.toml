@@ -1,0 +1,13 @@
+[[redirects]]
+  from = "/*"
+  to = "/home01.html"
+  status = 200
+
+[[headers]]
+  for = "css/fonts/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000"
+
+[[plugins]]
+  package = "@netlify/plugin-sitemap"

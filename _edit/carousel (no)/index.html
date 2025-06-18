@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8" />
+      <title>3D Carousel – click-to-slide</title>
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" />
+      <style>
+         html,
+         body {
+            margin: 0;
+            height: 100%;
+            background: black;
+         }
+
+         .carousel {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+         }
+         .carousel__body {
+            height: 600px;
+            width: 100%;
+            overflow: hidden;
+            padding-top: 60px;
+         }
+         .carousel__slider {
+            display: flex;
+            gap: 40px;
+            transition: transform 1s ease-in-out;
+            background: transparent;
+            will-change: transform;
+         }
+
+         .carousel__slider__item {
+            flex: 0 0 auto;
+            width: clamp(260px, 30vw, 400px);
+            height: clamp(260px, 30vw, 400px);
+            position: relative;
+            cursor: pointer;
+         }
+         .carousel__slider__item--active {
+            cursor: default;
+         }
+
+         .item__3d-frame {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+         }
+         .item__3d-frame__box {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #fff;
+            background: black;
+         }
+         .item__3d-frame__box h1 {
+            font-size: 7em;
+            margin: 0;
+            color: #fff;
+         }
+
+         .carousel__nav {
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+         }
+         .carousel__nav button {
+            pointer-events: auto;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            font-size: 60px;
+            color: #fff;
+            transition: transform 0.25s;
+         }
+         .carousel__nav button:hover {
+            transform: scale(1.25);
+         }
+         .carousel__nav button:focus {
+            outline: 2px solid white;
+         }
+
+         @media (prefers-reduced-motion: reduce) {
+            .carousel__slider,
+            .item__3d-frame {
+               transition: none !important;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="carousel">
+         <div class="carousel__body">
+            <div class="carousel__slider">
+               <div class="carousel__slider__item">
+                  <div class="item__3d-frame">
+                     <div class="item__3d-frame__box"><h1>1</h1></div>
+                  </div>
+               </div>
+               <div class="carousel__slider__item">
+                  <div class="item__3d-frame">
+                     <div class="item__3d-frame__box"><h1>2</h1></div>
+                  </div>
+               </div>
+               <div class="carousel__slider__item">
+                  <div class="item__3d-frame">
+                     <div class="item__3d-frame__box"><h1>3</h1></div>
+                  </div>
+               </div>
+               <div class="carousel__slider__item">
+                  <div class="item__3d-frame">
+                     <div class="item__3d-frame__box"><h1>4</h1></div>
+                  </div>
+               </div>
+               <div class="carousel__slider__item">
+                  <div class="item__3d-frame">
+                     <div class="item__3d-frame__box"><h1>5</h1></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="carousel__nav">
+            <button class="carousel__prev" aria-label="Slide anterior">
+               <i class="fas fa-angle-left"></i>
+            </button>
+            <button class="carousel__next" aria-label="Slide siguiente">
+               <i class="fas fa-angle-right"></i>
+            </button>
+         </div>
+      </div>
+
+      <script>
+         const intervalTime = 4000,
+            swipeThreshold = 40;
+         const carousel = document.querySelector('.carousel');
+         const slider = carousel.querySelector('.carousel__slider');
+         const items = [...carousel.querySelectorAll('.carousel__slider__item')];
+         const prevBtn = carousel.querySelector('.carousel__prev');
+         const nextBtn = carousel.querySelector('.carousel__next');
+
+         let currIndex = 1,
+            itemWidth = 0,
+            autoPlay = null,
+            startX = null;
+
+         const resize = () => {
+            itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(slider).gap);
+            slider.style.width = `${itemWidth * items.length}px`;
+            move(currIndex, false);
+         };
+
+         const move = (index, animate = true) => {
+            if (index < 1) index = items.length;
+            if (index > items.length) index = 1;
+            currIndex = index;
+
+            items.forEach((item, i) => {
+               const box = item.querySelector('.item__3d-frame');
+               item.classList.toggle('carousel__slider__item--active', i === index - 1);
+               box.style.transform =
+                  i === index - 1
+                     ? 'perspective(1200px)'
+                     : `perspective(1200px) rotateY(${i < index - 1 ? 40 : -40}deg)`;
+            });
+
+            const offset = index * -itemWidth + itemWidth / 2 + carousel.clientWidth / 2;
+            if (!animate) slider.style.transition = 'none';
+            requestAnimationFrame(() => {
+               slider.style.transform = `translate3d(${offset}px,0,0)`;
+            });
+            if (!animate) setTimeout(() => (slider.style.transition = ''), 17);
+         };
+
+         const startAutoplay = () => {
+            stopAutoplay();
+            autoPlay = setInterval(() => move(currIndex + 1), intervalTime);
+         };
+         const stopAutoplay = () => clearInterval(autoPlay);
+         const prev = () => {
+            move(currIndex - 1);
+            startAutoplay();
+         };
+         const next = () => {
+            move(currIndex + 1);
+            startAutoplay();
+         };
+
+         prevBtn.addEventListener('click', prev);
+         nextBtn.addEventListener('click', next);
+
+         /* click en slide */
+         items.forEach((item, i) => {
+            item.addEventListener('click', () => {
+               if (i + 1 !== currIndex) {
+                  // sólo si no es el centro
+                  move(i + 1);
+                  startAutoplay();
+               }
+            });
+         });
+
+         /* teclado */
+         document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
+         });
+
+         /* hover pausa */
+         carousel.addEventListener('mouseenter', stopAutoplay);
+         carousel.addEventListener('mouseleave', startAutoplay);
+
+         /* swipe */
+         carousel.addEventListener('pointerdown', (e) => (startX = e.clientX));
+         carousel.addEventListener('pointerup', (e) => {
+            if (startX === null) return;
+            const dx = e.clientX - startX;
+            if (dx > swipeThreshold) prev();
+            if (dx < -swipeThreshold) next();
+            startX = null;
+         });
+
+         /* responsive */
+         const ro = new ResizeObserver(resize);
+         ro.observe(carousel);
+
+         /* motion-safe */
+         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+         const updateMotion = () => {
+            slider.style.transitionDuration = reduced.matches ? '0ms' : '1000ms';
+         };
+         reduced.addEventListener('change', updateMotion);
+         updateMotion();
+
+         resize();
+         move(1, false);
+         startAutoplay();
+      </script>
+   </body>
+</html>
