@@ -629,10 +629,10 @@
                   </div>
                   <div class="carousel__nav">
                      <button class="carousel__prev" aria-label="Slide anterior">
-                        <i class="fas fa-angle-left"></i>
+                        <span class="fcx-icon fcx-icon-chevron-left"></span>
                      </button>
                      <button class="carousel__next" aria-label="Slide siguiente">
-                        <i class="fas fa-angle-right"></i>
+                        <span class="fcx-icon fcx-icon-chevron-right"></span>
                      </button>
                   </div>
                </div>
@@ -1127,14 +1127,14 @@
       </script>
 
       <script>
-         const intervalTime = 4000; // ms entre slides
+         const intervalTime = 4000; // ms entre cada avance posterior
          const swipeThreshold = 40; // px para swipe
          const PERSPECTIVE = 1800; // profundidad 3D
          const ANGLE = 25; // inclinación lateral
 
          /* ---------- Elementos principales ----------------------------- */
-         const sectionCX = document.getElementById('serviciox-cx'); // sección contenedora
-         const carousel = sectionCX.querySelector('.carousel'); // carrusel dentro de la sección
+         const sectionCX = document.getElementById('serviciox-cx');
+         const carousel = sectionCX.querySelector('.carousel');
          const slider = carousel.querySelector('.carousel__slider');
          const items = [...carousel.querySelectorAll('.carousel__slider__item')];
          const prevBtn = carousel.querySelector('.carousel__prev');
@@ -1150,7 +1150,7 @@
          const resize = () => {
             itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(slider).gap);
             slider.style.width = `${itemWidth * items.length}px`;
-            move(currIndex, false); // posición base sin animar
+            move(currIndex, false); // coloca sin animación
          };
 
          const move = (index, animate = true) => {
@@ -1175,8 +1175,9 @@
             if (!animate) setTimeout(() => (slider.style.transition = ''), 17);
          };
 
-         const startAutoplay = () => {
+         const startAutoplay = (immediate = false) => {
             stopAutoplay();
+            if (immediate) move(currIndex + 1); // avanza YA
             autoPlay = setInterval(() => move(currIndex + 1), intervalTime);
          };
          const stopAutoplay = () => clearInterval(autoPlay);
@@ -1195,7 +1196,6 @@
          nextBtn.addEventListener('click', next);
 
          items.forEach((item, i) => {
-            // click en slide lateral
             item.addEventListener('click', () => {
                if (i + 1 !== currIndex) {
                   move(i + 1);
@@ -1221,46 +1221,37 @@
          });
 
          /* responsive */
-         const ro = new ResizeObserver(resize);
-         ro.observe(carousel);
+         new ResizeObserver(resize).observe(carousel);
 
          /* motion-safe */
          const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-         const updateMotion = () => {
-            slider.style.transitionDuration = reduced.matches ? '0ms' : '1000ms';
-         };
+         const updateMotion = () =>
+            (slider.style.transitionDuration = reduced.matches ? '0ms' : '1000ms');
          reduced.addEventListener('change', updateMotion);
          updateMotion();
 
-         /* ---------- IntersectionObserver para iniciar ----------------- */
-         let isPlaying = false; // evita intervalos duplicados
+         /* ---------- IntersectionObserver -------------------------------- */
+         let isPlaying = false;
 
-         const io = new IntersectionObserver(
+         new IntersectionObserver(
             (entries) => {
                entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                     // ≥35 % visible
-                     currIndex = 1; // aseguramos slide 1
-                     move(1, true); // anima a slide 1
-                     startAutoplay(); // autoplay continuo
+                  if (entry.isIntersecting && !isPlaying) {
+                     currIndex = 1; // garantizamos que arrancamos desde 1
+                     move(1, true); // animamos al slide 1 (rápido)
+                     startAutoplay(true); // avanza INMEDIATO al slide 2 y sigue
                      isPlaying = true;
-                  } else if (isPlaying) {
-                     // salió de pantalla
-                     stopAutoplay(); // pausa (fuera del viewport)
+                  } else if (!entry.isIntersecting && isPlaying) {
+                     stopAutoplay(); // pausa fuera de pantalla
                      isPlaying = false;
                   }
                });
             },
-            {
-               root: null,
-               threshold: 0.35, // viewport, 35 % visibilidad
-            }
-         );
+            { threshold: 0.35 }
+         ).observe(sectionCX);
 
-         io.observe(sectionCX);
-
-         /* ---------- Init: solo cálculo de tamaños --------------------- */
-         resize(); // configura medidas sin iniciar animación
+         /* ---------- Init ---------------------------------------------- */
+         resize(); // calcula tamaños sin arrancar animación hasta ser visible
       </script>
    </body>
 </html>

@@ -174,7 +174,7 @@ ul.main-menu li.current-menu-ancestor > a {
    left: 0;
    width: 100%;
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    pointer-events: none;
 }
 .carousel__nav button {
@@ -182,15 +182,26 @@ ul.main-menu li.current-menu-ancestor > a {
    background: none;
    border: 0;
    cursor: pointer;
-   font-size: 60px;
-   color: #fff;
-   transition: transform 0.25s;
+   width: 64px;
+   height: 64px;
+   margin: 16px 0 0 16px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   border-radius: var(--fcx-small-br);
+   transition: all 0.2s ease-in-out;
 }
+
 .carousel__nav button:hover {
-   transform: scale(1.25);
+   background-color: transparent !important;
 }
-.carousel__nav button:focus {
-   outline: 2px solid white;
+.carousel__nav button span {
+   background-color: #aaa;
+   transition: all 0.2s ease-in-out;
+}
+.carousel__nav button:hover span {
+   background-color: var(--fcx-s-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
