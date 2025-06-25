@@ -62,12 +62,7 @@
   --fcx-s-cursor-light: var(--fcx-s-backlight);
 
   /* A horizontal side-fade gradient border color */
-  --fcx-c-border-gradient: linear-gradient(
-    to left,
-    transparent,
-    var(--fcx-s-border),
-    transparent
-  );
+  --fcx-c-border-gradient: linear-gradient(to left, transparent, var(--fcx-s-border), transparent);
 
   /* Main menu text color */
   --fcx-c-menu: var(--fcx-s-text);
@@ -85,13 +80,13 @@
 :root {
   /* === FONT GROUPS === */
   /* Headings Font Family */
-  --fcx-t-heading-ff: "Rubik", sans-serif;
+  --fcx-t-heading-ff: 'Rubik', sans-serif;
 
   /* Headings Font Weight */
   --fcx-t-heading-fw: 600;
 
   /* Content Font Family */
-  --fcx-t-content-ff: "Rubik", sans-serif;
+  --fcx-t-content-ff: 'Rubik', sans-serif;
 
   /* Content Font Weight */
   --fcx-t-content-fw: 400;
@@ -196,7 +191,7 @@
   --fcx-t-h5-margin: -0.19em 0 1em -0.06em;
 
   /* H6 Heading font size */
-  --fcx-t-h6-fs: 20px;
+  --fcx-t-h6-fs: 22px;
 
   /* H6 Heading letter spacing */
   --fcx-t-h6-ls: -0.02em;
@@ -209,6 +204,7 @@
 
   /* === CONTENT === */
   /* Content Large text Font Size */
+  --fcx-t-xlarge-fs: 22px;
   --fcx-t-large-fs: 20px;
 
   /* Content text Font Size */
