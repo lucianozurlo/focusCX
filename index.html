@@ -22,6 +22,12 @@
       <link type="text/css" rel="stylesheet" href="css/preload.css" />
       <link type="text/css" rel="stylesheet" href="css/focuscx.css" />
       <link rel="icon" href="img/favicon.png" sizes="32x32" />
+
+      <style>
+         #contacto {
+            scroll-margin-top: 120px;
+         }
+      </style>
    </head>
 
    <body>
@@ -959,7 +965,7 @@
                            data-split-delay="100"
                            data-split-by="line"
                         >
-                           ¿Te animas a potenciar la experiencia en tu organizacion?
+                           ¿Te animas a potenciar la experiencia en tu organización?
                         </div>
                         <div class="fcx-cta-text">
                            <div class="stg-row stg-valign-middle">
@@ -1169,7 +1175,6 @@
             const headerH = $('#fcx-header').outerHeight();
             const $sections = $('section[id]');
 
-            // Función para resaltar la sección activa
             function updateActive() {
                const scrollPos = $(window).scrollTop();
                $('nav li.current-menu-parent').removeClass('current-menu-parent');
@@ -1187,25 +1192,19 @@
                });
             }
 
-            // Delegación global de clicks en <a href="#...">
             $(document).on('click', 'a[href^="#"]', function (e) {
                const $link = $(this);
                const href = $link.attr('href');
 
-               // 1) Ignorar el toggler del side-menu
                if ($link.is('.fcx-mobile-menu-toggler')) return;
 
-               // 2) Asegurarnos de que exista la sección destino
                const $target = $(href);
                if (!$target.length) return;
 
-               // 3) Si llegamos hasta acá, es un ancla válida:
                e.preventDefault();
 
-               // cerramos el side-menu
                $('body').removeClass('show-menu');
 
-               // smooth scroll con offset
                $('html, body')
                   .stop()
                   .animate(
@@ -1218,7 +1217,6 @@
                   );
             });
 
-            // Actualizar highlight al hacer scroll y al cargar
             $(window).on('scroll', updateActive);
             updateActive();
          });
@@ -1232,7 +1230,6 @@
             const openLinks = document.querySelectorAll('a.fcx-button.book');
 
             function openModal() {
-               // Ponés aquí tu URL de scheduling, tal cual Google te da:
                iframe.src =
                   'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0GpEz147zbOdyUzq9H9Z0Vo2qEMKZYXeS9cPUZqNotYMI63Nwb5_qOsd66qbF7oEBFjrcx54R-?gv=true';
                modal.classList.add('open');
@@ -1240,7 +1237,6 @@
 
             function closeModal() {
                modal.classList.remove('open');
-               // opcional: limpiar src para detener la carga al cerrar
                setTimeout(() => (iframe.src = ''), 300);
             }
 
@@ -1259,131 +1255,60 @@
       </script>
 
       <script>
-         const intervalTime = 4000; // ms entre cada avance posterior
-         const swipeThreshold = 40; // px para swipe
-         const PERSPECTIVE = 1800; // profundidad 3D
-         const ANGLE = 25; // inclinación lateral
+         $(function () {
+            const headerH = $('#fcx-header').outerHeight();
+            const CONTACT_OFFSET = -120;
+            const $sections = $('section[id]');
 
-         /* ---------- Elementos principales ----------------------------- */
-         const sectionCX = document.getElementById('serviciox-cx');
-         const carousel = sectionCX.querySelector('.carousel');
-         const slider = carousel.querySelector('.carousel__slider');
-         const items = [...carousel.querySelectorAll('.carousel__slider__item')];
-         const prevBtn = carousel.querySelector('.carousel__prev');
-         const nextBtn = carousel.querySelector('.carousel__next');
+            const extra = (id) => (id === 'contacto' ? CONTACT_OFFSET : 0);
 
-         /* ---------- Estado -------------------------------------------- */
-         let currIndex = 1; // 1-based
-         let itemWidth = 0;
-         let autoPlay = null;
-         let startX = null;
+            function updateActive() {
+               const scrollPos = $(window).scrollTop();
 
-         /* ---------- Helpers ------------------------------------------- */
-         const resize = () => {
-            itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(slider).gap);
-            slider.style.width = `${itemWidth * items.length}px`;
-            move(currIndex, false); // coloca sin animación
-         };
+               $('nav li.current-menu-parent').removeClass('current-menu-parent');
 
-         const move = (index, animate = true) => {
-            if (index < 1) index = items.length;
-            if (index > items.length) index = 1;
-            currIndex = index;
+               $sections.each(function () {
+                  const id = this.id;
+                  const top = $(this).offset().top - headerH - extra(id) - 10;
+                  const last = top + $(this).outerHeight();
 
-            items.forEach((item, i) => {
-               const box = item.querySelector('.item__3d-frame');
-               item.classList.toggle('carousel__slider__item--active', i === index - 1);
-               box.style.transform =
-                  i === index - 1
-                     ? `perspective(${PERSPECTIVE}px)`
-                     : `perspective(${PERSPECTIVE}px) rotateY(${i < index - 1 ? ANGLE : -ANGLE}deg)`;
-            });
-
-            const offset = index * -itemWidth + itemWidth / 2 + carousel.clientWidth / 2;
-            if (!animate) slider.style.transition = 'none';
-            requestAnimationFrame(() => {
-               slider.style.transform = `translate3d(${offset}px,0,0)`;
-            });
-            if (!animate) setTimeout(() => (slider.style.transition = ''), 17);
-         };
-
-         const startAutoplay = (immediate = false) => {
-            stopAutoplay();
-            if (immediate) move(currIndex + 1); // avanza YA
-            autoPlay = setInterval(() => move(currIndex + 1), intervalTime);
-         };
-         const stopAutoplay = () => clearInterval(autoPlay);
-
-         const prev = () => {
-            move(currIndex - 1);
-            startAutoplay();
-         };
-         const next = () => {
-            move(currIndex + 1);
-            startAutoplay();
-         };
-
-         /* ---------- Listeners ----------------------------------------- */
-         prevBtn.addEventListener('click', prev);
-         nextBtn.addEventListener('click', next);
-
-         items.forEach((item, i) => {
-            item.addEventListener('click', () => {
-               if (i + 1 !== currIndex) {
-                  move(i + 1);
-                  startAutoplay();
-               }
-            });
-         });
-
-         /* teclado */
-         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-         });
-
-         /* swipe touch */
-         carousel.addEventListener('pointerdown', (e) => (startX = e.clientX));
-         carousel.addEventListener('pointerup', (e) => {
-            if (startX === null) return;
-            const dx = e.clientX - startX;
-            if (dx > swipeThreshold) prev();
-            if (dx < -swipeThreshold) next();
-            startX = null;
-         });
-
-         /* responsive */
-         new ResizeObserver(resize).observe(carousel);
-
-         /* motion-safe */
-         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-         const updateMotion = () =>
-            (slider.style.transitionDuration = reduced.matches ? '0ms' : '1000ms');
-         reduced.addEventListener('change', updateMotion);
-         updateMotion();
-
-         /* ---------- IntersectionObserver -------------------------------- */
-         let isPlaying = false;
-
-         new IntersectionObserver(
-            (entries) => {
-               entries.forEach((entry) => {
-                  if (entry.isIntersecting && !isPlaying) {
-                     currIndex = 1; // garantizamos que arrancamos desde 1
-                     move(1, true); // animamos al slide 1 (rápido)
-                     startAutoplay(true); // avanza INMEDIATO al slide 2 y sigue
-                     isPlaying = true;
-                  } else if (!entry.isIntersecting && isPlaying) {
-                     stopAutoplay(); // pausa fuera de pantalla
-                     isPlaying = false;
+                  if (scrollPos >= top && scrollPos < last) {
+                     $('nav a[href="#' + id + '"]')
+                        .parent('li')
+                        .addClass('current-menu-parent');
+                     return false;
                   }
                });
-            },
-            { threshold: 0.35 }
-         ).observe(sectionCX);
+            }
 
-         /* ---------- Init ---------------------------------------------- */
-         resize(); // calcula tamaños sin arrancar animación hasta ser visible
+            $(document).on('click', 'a[href^="#"]', function (e) {
+               const $link = $(this);
+               const href = $link.attr('href');
+
+               if (!$link.length || href.length === 1 || $link.is('.fcx-mobile-menu-toggler'))
+                  return;
+
+               const $target = $(href);
+               if (!$target.length) return;
+
+               e.preventDefault();
+               $('body').removeClass('show-menu');
+
+               $('html, body')
+                  .stop()
+                  .animate(
+                     {
+                        scrollTop: $target.offset().top - headerH - extra(href.slice(1)),
+                     },
+                     400,
+                     'swing',
+                     updateActive
+                  );
+            });
+
+            $(window).on('scroll', updateActive);
+            updateActive();
+         });
       </script>
    </body>
 </html>
