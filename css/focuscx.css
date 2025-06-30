@@ -197,11 +197,11 @@ button:not([class*='pswp']) {
    margin-bottom: 4px;
 }
 #contacto input {
-   margin-bottom: 12px;
-   padding: 12px 14px;
+   margin-bottom: 10px;
+   padding: 10px 12px;
 }
 #contacto textarea {
-   height: 130px;
+   height: 100px;
 }
 
 /* FOOTER */
