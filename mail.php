@@ -2,7 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     /* ─── Configuración ──────────────────────────────────────────────── */
-    $mail_to = 'hugo@focuscx.net';               // destinatario final
+    $mail_to = 'info@focuscx.net';               // destinatario final
     $from    = 'no-reply@tu-dominio.com';        // debe ser un mail de tu dominio
     $subject = 'Nuevo mensaje desde tu web';     // asunto
 
